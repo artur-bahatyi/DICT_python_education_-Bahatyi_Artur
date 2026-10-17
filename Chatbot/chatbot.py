@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+bot_name = "Jarvis"
+birth_year = 2026
+
+# Етап 1 & 2: Привітання та ім'я користувача
+print(f"Hello! My name is {bot_name}.")
+print(f"I was created in {birth_year}.")
+print("Please, remind me your name.")
+your_name = input("> ")
+print(f"What a great name you have, {your_name}!")
+
+# Етап 3: Вгадування віку
+print("Let me guess your age.")
+print("Enter remainders of dividing your age by 3, 5 and 7.")
+remainder3 = int(input("> "))
+remainder5 = int(input("> "))
+remainder7 = int(input("> "))
+
+your_age = (remainder3 * 70 + remainder5 * 21 + remainder7 * 15) % 105
+print(f"Your age is {your_age}; that's a good time to start programming!")
+print("Now I will prove to you that I can count to any number you want.")
+count_to = int(input("> "))
+for i in range(count_to + 1):
+    print(f"{i}")
+print("Completed, have a nice day!")
+=======
 bot_name = "DICT_Bot"
 birth_year = 2026
 
@@ -26,6 +52,7 @@ age_number = int(input())
 for i in range(age_number + 1):
     print(f"{i} !")
 
+>>>>>>> d9f36e3753a9b193612e924377890cec63bad407
 print("Let's test your programming knowledge.")
 print("Why do we use methods?")
 print("1. To repeat a statement multiple times.")
@@ -33,6 +60,18 @@ print("2. To decompose a program into several small subroutines.")
 print("3. To determine the execution time of a program.")
 print("4. To interrupt the execution of a program.")
 
+<<<<<<< HEAD
+
+while True:
+    answer = int(input("> "))
+    if answer == 2:
+        break  
+    else:
+        print("Please, try again.")
+
+# Фінальне привітання (виконується після виходу з циклу while)
+print("Congratulations, have a nice day!")
+=======
 answer = int(input())
 while answer != 2:
     print("Please, try again.")
@@ -42,3 +81,4 @@ print("Completed, have a nice day!")
 
 
 print("Congratulations, have a nice day!")
+>>>>>>> d9f36e3753a9b193612e924377890cec63bad407
