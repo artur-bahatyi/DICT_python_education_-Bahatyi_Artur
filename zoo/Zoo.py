@@ -131,10 +131,21 @@ It looks fine!"""
 animals = [camel, lion, deer, goose, bat, rabbit]
 
 while True:
-    user_input = input("Please enter the number of the habitat you would like to view: ")
-    if user_input == "exit":
+    habitat = input(
+        "Please enter the number of the habitat you would like to view :> "
+    )
+
+    if habitat == "exit":
         print("See you later!")
         break
-    else:
-        index = int(user_input)
+
+    if not habitat.isdigit():
+        print("Please enter a valid number or 'exit'.")
+        continue
+
+    index = int(habitat) - 1
+
+    if 0 <= index < len(animals):
         print(animals[index])
+    else:
+        print(f"Please enter a number between 1 and {len(animals)}.")
