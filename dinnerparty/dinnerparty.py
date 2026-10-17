@@ -19,20 +19,20 @@ else:
         lucky_one = random.choice(list(friends.keys()))
         print(f"{lucky_one} is the lucky one!")
 
-
-        share = round(total_amount / (num_friends - 1), 2)
-
-        for friend in friends:
-            if friend == lucky_one:
-                friends[friend] = 0
-            else:
-                friends[friend] = share
+        if num_friends == 1:
+            # Якщо один учасник, ділити на (1 - 1) не можна, тож він оплачує весь чек повністю
+            friends[lucky_one] = round(total_amount, 2)
+        else:
+            share = round(total_amount / (num_friends - 1), 2)
+            for friend in friends:
+                if friend == lucky_one:
+                    friends[friend] = 0
+                else:
+                    friends[friend] = share
     else:
         print("No one is going to be lucky")
 
-
         share = round(total_amount / num_friends, 2)
-
         for friend in friends:
             friends[friend] = share
 
