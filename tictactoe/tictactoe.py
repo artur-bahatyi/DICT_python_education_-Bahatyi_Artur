@@ -9,7 +9,8 @@ for row in board:
 
 print("\n" + "=" * 40 + "\n")
 
-cells = input("Enter cells: ")
+# Standardizing input: convert any '_' to a space for consistency
+cells = input("Enter cells: ").replace('_', ' ')
 
 print("---------")
 
@@ -20,8 +21,8 @@ for i in range(0, 9, 3):
 print("---------")
 
 x_count = cells.count('X')
-o_count = cells.count('O') + cells.count('0')
-empty_count = cells.count('_') + cells.count(' ')
+o_count = cells.count('O')
+empty_count = cells.count(' ')
 
 winning_combinations = [
     (0, 1, 2), (3, 4, 5), (6, 7, 8),
@@ -30,7 +31,7 @@ winning_combinations = [
 ]
 
 x_wins = any(cells[a] == cells[b] == cells[c] == 'X' for a, b, c in winning_combinations)
-o_wins = any(cells[a] == cells[b] == cells[c] in ('O', '0') for a, b, c in winning_combinations)
+o_wins = any(cells[a] == cells[b] == cells[c] == 'O' for a, b, c in winning_combinations)
 
 if abs(x_count - o_count) >= 2 or (x_wins and o_wins):
     print("Impossible")
@@ -45,6 +46,7 @@ else:
 
 print("\n" + "=" * 40 + "\n")
 
+# Part 2: Single Move Placement
 cells_list = list(cells)
 
 while True:
@@ -67,7 +69,7 @@ while True:
 
     index = (row - 1) * 3 + (col - 1)
 
-    if cells_list[index] not in ('_', ' '):
+    if cells_list[index] != ' ':
         print("This cell is occupied! Choose another one!")
         continue
 
@@ -81,6 +83,7 @@ print("---------")
 
 print("\n" + "=" * 40 + "\n")
 
+# Part 3: Interactive Two-Player Game Loop
 game_cells = [' '] * 9
 current_player = 'X'
 
