@@ -1,3 +1,4 @@
+# Part 1: Initial Board State Analysis
 board = [
     ["X", "O", "X"],
     ["O", "X", "O"],
